@@ -1,0 +1,19 @@
+### Base URL
+@baseUrl = http://localhost:5000/api/air-quality
+
+### 1. Récupérer tout l'historique
+GET {{baseUrl}}/
+Accept: application/json
+
+###
+
+### 2. Récupérer le rapport analytique (Statistiques)
+GET {{baseUrl}}/report
+Accept: application/json
+
+###
+
+### 3. Filtrer par plage de dates
+# Remplacez les dates par des dates présentes dans votre base
+GET {{baseUrl}}/range?start=2024-01-01&end=2026-12-31
+Accept: application/json
