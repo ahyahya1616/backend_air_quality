@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const airQualityRoutes = require('./routes/airQualityRoutes');
+const hardwareRoutes = require('./routes/hardwareRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api/air-quality', airQualityRoutes);
+app.use('/api', hardwareRoutes);
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/air_quality_db')
